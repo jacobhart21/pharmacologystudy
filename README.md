@@ -2,6 +2,8 @@
 
 DoseLab is a browser-based dosage-calculation practice tool. It generates fresh problems in the same families as the supplied worksheets and reveals a worked solution after a correct answer, an exhausted attempt limit, or a skip.
 
+**GitHub Pages:** <https://jacobhart21.github.io/pharmacologystudy/>
+
 ## Practice included
 
 - Dose and stock-volume calculations
@@ -25,7 +27,7 @@ pnpm dev
 
 ## Publish with GitHub Pages
 
-The included workflow builds a fully static copy with relative asset paths, so it works as a GitHub Pages project site under a repository subpath.
+The included workflow builds a fully static React app with relative asset paths, so it works as a GitHub Pages project site under a repository subpath.
 
 1. Push the project to a GitHub repository with `main` as the default branch.
 2. In the repository, open **Settings → Pages**.

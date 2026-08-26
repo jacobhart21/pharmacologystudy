@@ -174,7 +174,8 @@ const percentDoseVolume = (): Problem => {
     formula: '% w/v × 10 = mg/mL; volume = dose ÷ mg/mL',
     hint: 'First convert percent w/v to mg/mL by multiplying by 10.',
     steps: [
-      { label: 'Convert the strength', expression: `${formatNumber(percent, 2)} g/100 mL × 1,000 mg/g = ${formatNumber(concentration, 3)} mg/mL` },
+      { label: 'Convert grams to milligrams', expression: `${formatNumber(percent, 2)} g/100 mL × 1,000 mg/g = ${formatNumber(percent * 1000, 3)} mg/100 mL` },
+      { label: 'Find mg per mL', expression: `${formatNumber(percent * 1000, 3)} mg ÷ 100 mL = ${formatNumber(concentration, 3)} mg/mL` },
       { label: 'Set up the volume', expression: `${formatNumber(dose, 2)} mg ÷ ${formatNumber(concentration, 3)} mg/mL` },
       { label: 'Calculate', expression: `${formatNumber(volume, 2)} mL` },
     ],
@@ -485,7 +486,7 @@ const dilutionFinal = (): Problem => {
 const dilutionAdded = (): Problem => {
   const initialVolume = pick([10, 20, 30, 40, 50, 60]);
   const initialStrength = pick([2, 4, 5, 6, 8, 10, 20]);
-  const factor = pick([1.25, 1.5, 2, 2.5, 4]);
+  const factor = pick([1.25, 2, 2.5, 4]);
   const finalStrength = initialStrength / factor;
   const finalVolume = initialVolume * factor;
   const added = finalVolume - initialVolume;
